@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rag Day Registration — Student Portal</title>
+  <title>Rag Day Registration - Student Portal</title>
   <meta name="description" content="Register for the college Rag Day event. Fill in your details and payment information to secure your spot." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,41 +12,39 @@
 </head>
 <body>
 
-  <!-- ─── Hero Header ──────────────────────────────────────────── -->
+  <!-- Hero Header -->
   <header class="hero">
     <div class="hero-bg"></div>
     <div class="hero-content">
-      <div class="event-badge">🎓 Annual Event 2026</div>
+      <div class="event-badge">Annual Event 2026</div>
       <h1 class="hero-title">Rag Day<br/><span>Registration</span></h1>
       <p class="hero-subtitle">
         Secure your spot for the most exciting day of the year.<br/>
         Fill in your details below and complete payment to register.
       </p>
       <div class="hero-stats">
-        <div class="stat"><span class="stat-icon">🎉</span> Fun & Celebration</div>
+        <div class="stat"><span class="stat-icon">&#127881;</span> Fun &amp; Celebration</div>
         <div class="stat-divider"></div>
-        <div class="stat"><span class="stat-icon">🤝</span> Build Memories</div>
+        <div class="stat"><span class="stat-icon">&#129309;</span> Build Memories</div>
         <div class="stat-divider"></div>
-        <div class="stat"><span class="stat-icon">🏆</span> Grand Finale</div>
+        <div class="stat"><span class="stat-icon">&#127942;</span> Grand Finale</div>
       </div>
     </div>
   </header>
 
-  <!-- ─── Main Form ─────────────────────────────────────────────── -->
+  <!-- Main Form -->
   <main class="main-container">
     <div class="form-card">
       <div class="form-header">
-        <div class="form-icon">📋</div>
+        <div class="form-icon">&#128203;</div>
         <h2>Student Information</h2>
         <p>Please fill all required fields accurately</p>
       </div>
 
-      <!-- Success / Error Messages -->
       <div id="alertBox" class="alert hidden"></div>
 
       <form id="registrationForm" novalidate>
 
-        <!-- Section: Personal Info -->
         <div class="section-label">
           <span class="section-num">01</span> Personal Details
         </div>
@@ -55,7 +53,7 @@
           <div class="form-group">
             <label for="name">Student Name <span class="req">*</span></label>
             <div class="input-wrapper">
-              <span class="input-icon">👤</span>
+              <span class="input-icon">&#128100;</span>
               <input type="text" id="name" name="name" placeholder="Full Name" required autocomplete="name" />
             </div>
             <span class="field-error" id="nameError"></span>
@@ -64,7 +62,7 @@
           <div class="form-group">
             <label for="roll">Roll Number <span class="req">*</span></label>
             <div class="input-wrapper">
-              <span class="input-icon">🎫</span>
+              <span class="input-icon">#</span>
               <input type="text" id="roll" name="roll" placeholder="e.g. CSE-21-001" required />
             </div>
             <span class="field-error" id="rollError"></span>
@@ -75,7 +73,7 @@
           <div class="form-group">
             <label for="section">Section <span class="req">*</span></label>
             <div class="input-wrapper">
-              <span class="input-icon">🔠</span>
+              <span class="input-icon">&#128290;</span>
               <input type="text" id="section" name="section" placeholder="e.g. A / B / C" required />
             </div>
             <span class="field-error" id="sectionError"></span>
@@ -84,7 +82,7 @@
           <div class="form-group">
             <label for="department">Department <span class="req">*</span></label>
             <div class="input-wrapper">
-              <span class="input-icon">🏛️</span>
+              <span class="input-icon">&#127970;</span>
               <input type="text" id="department" name="department" placeholder="e.g. CSE, EEE, BBA" required />
             </div>
             <span class="field-error" id="departmentError"></span>
@@ -95,7 +93,7 @@
           <div class="form-group">
             <label for="email">Email Address <span class="req">*</span></label>
             <div class="input-wrapper">
-              <span class="input-icon">✉️</span>
+              <span class="input-icon">@</span>
               <input type="email" id="email" name="email" placeholder="your@email.com" required autocomplete="email" />
             </div>
             <span class="field-error" id="emailError"></span>
@@ -104,7 +102,7 @@
           <div class="form-group">
             <label for="phone">Phone Number <span class="optional">(Optional)</span></label>
             <div class="input-wrapper">
-              <span class="input-icon">📱</span>
+              <span class="input-icon">&#128222;</span>
               <input type="tel" id="phone" name="phone" placeholder="+880 1X XX XX XX XX" autocomplete="tel" />
             </div>
           </div>
@@ -114,21 +112,20 @@
           <div class="form-group">
             <label for="tshirt_size">T-shirt Size <span class="req">*</span></label>
             <div class="input-wrapper select-wrapper smooth-select">
-              <span class="input-icon">👕</span>
+              <span class="input-icon">&#128085;</span>
               <select id="tshirt_size" name="tshirt_size" required>
-                <option value="">— Select Size —</option>
+                <option value="">&mdash; Select Size &mdash;</option>
                 <option value="M">M</option>
                 <option value="L">L</option>
                 <option value="XL">XL</option>
                 <option value="XXL">XXL</option>
               </select>
-              <span class="select-arrow">▾</span>
+              <span class="select-arrow">&#9662;</span>
             </div>
             <span class="field-error" id="tshirt_sizeError"></span>
           </div>
         </div>
 
-        <!-- Section: Payment Info -->
         <div class="section-label">
           <span class="section-num">02</span> Payment Information
         </div>
@@ -143,7 +140,7 @@
             <small>01866619714</small>
           </div>
         </div>
-        <p class="payment-amount-note">Payable Amount: <strong>650 BDT</strong></p>
+        <p class="payment-amount-note">Payable Amount: <strong>650 BDT</strong> <span class="payment-amount-hint">(শুধুমাত্র সেন্ড মানি)</span></p>
 
         <input type="hidden" id="payment_method" name="payment_method" value="Bkash" />
 
@@ -151,7 +148,7 @@
           <div class="form-group">
             <label for="transaction_id">Transaction ID <span class="req">*</span></label>
             <div class="input-wrapper">
-              <span class="input-icon">🔑</span>
+              <span class="input-icon">&#128273;</span>
               <input type="text" id="transaction_id" name="transaction_id" placeholder="e.g. TXN123456789" required />
             </div>
             <span class="field-error" id="transaction_idError"></span>
@@ -162,7 +159,7 @@
           <div class="form-group">
             <label for="payment_time">Payment Time <span class="req">*</span></label>
             <div class="input-wrapper">
-              <span class="input-icon">🕐</span>
+              <span class="input-icon">&#128336;</span>
               <input type="datetime-local" id="payment_time" name="payment_time" required readonly />
             </div>
             <span class="field-error" id="payment_timeError"></span>
@@ -174,22 +171,21 @@
             <div class="upload-area" id="uploadArea">
               <input type="file" id="screenshot" name="screenshot" accept="image/*,.pdf" />
               <div class="upload-content" id="uploadContent">
-                <span class="upload-icon">📷</span>
-                <p>Click or drag & drop</p>
-                <small>JPG, PNG, PDF — max 5MB</small>
+                <span class="upload-icon">&#128247;</span>
+                <p>Click or drag &amp; drop</p>
+                <small>JPG, PNG, PDF &mdash; max 5MB</small>
               </div>
               <div class="upload-preview hidden" id="uploadPreview">
                 <img id="previewImg" src="" alt="Preview" />
-                <button type="button" class="remove-file" id="removeFile">✕</button>
+                <button type="button" class="remove-file" id="removeFile">&#10005;</button>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Submit Button -->
         <div class="submit-wrapper">
           <button type="submit" class="btn-submit" id="submitBtn">
-            <span class="btn-text">🚀 Submit Registration</span>
+            <span class="btn-text">Submit Registration</span>
             <span class="btn-spinner hidden" id="spinner">
               <span class="spinner-ring"></span> Submitting...
             </span>
@@ -199,10 +195,45 @@
       </form>
     </div>
 
-    <!-- ─── Footer ──────────────────────────────────────────────── -->
+    <!-- Footer -->
     <footer class="site-footer">
-      <p>© 2026 Rag Day Committee • All Rights Reserved</p>
-      <p class="footer-note">For support, contact the committee office.</p>
+      <p class="footer-credit-title">Developed By</p>
+      <div class="developer-grid">
+        <article class="developer-card">
+          <p class="dev-name">Muhammad Muntasir Mahmud Khan</p>
+          <p class="dev-role">Backend and Frontend Developer, CEO of DrawnDimension</p>
+          <div class="dev-socials">
+            <a class="social-btn facebook" href="https://www.facebook.com/share/1DtNR1gg8v/" target="_blank" rel="noopener noreferrer" aria-label="Muhammad Muntasir Mahmud Khan Facebook">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M13.5 21v-8h2.7l.5-3h-3.2V8.1c0-.8.3-1.6 1.7-1.6H17V3.8c-.4-.1-1.3-.3-2.6-.3-2.8 0-4.4 1.7-4.4 4.7V10H7.3v3H10v8h3.5z"/>
+              </svg>
+            </a>
+            <a class="social-btn instagram" href="https://www.instagram.com/mahamudmontasir?igsh=MTk0OHJtdjFkYzk1Nw==" target="_blank" rel="noopener noreferrer" aria-label="Muhammad Muntasir Mahmud Khan Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7.8 3h8.4A4.8 4.8 0 0 1 21 7.8v8.4a4.8 4.8 0 0 1-4.8 4.8H7.8A4.8 4.8 0 0 1 3 16.2V7.8A4.8 4.8 0 0 1 7.8 3zm8.3 1.8H7.9A3.1 3.1 0 0 0 4.8 8v8.1a3.1 3.1 0 0 0 3.1 3.1h8.1a3.1 3.1 0 0 0 3.1-3.1V8a3.1 3.1 0 0 0-3.1-3.1zM12 7.6A4.4 4.4 0 1 1 7.6 12 4.4 4.4 0 0 1 12 7.6zm0 1.8A2.6 2.6 0 1 0 14.6 12 2.6 2.6 0 0 0 12 9.4zm4.9-2.1a1 1 0 1 1-1 1 1 1 0 0 1 1-1z"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="developer-card">
+          <p class="dev-name">MD Asadu Hinu Sabbir</p>
+          <p class="dev-role">Frontend Developer, Finance Manager at DrawnDimension</p>
+          <div class="dev-socials">
+            <a class="social-btn facebook" href="https://www.facebook.com/share/1AmCngkpDZ/" target="_blank" rel="noopener noreferrer" aria-label="MD Asadu Hinu Sabbir Facebook">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M13.5 21v-8h2.7l.5-3h-3.2V8.1c0-.8.3-1.6 1.7-1.6H17V3.8c-.4-.1-1.3-.3-2.6-.3-2.8 0-4.4 1.7-4.4 4.7V10H7.3v3H10v8h3.5z"/>
+              </svg>
+            </a>
+            <a class="social-btn instagram" href="https://www.instagram.com/ah_sabbir_00?igsh=MWU1ZGc5aDl1Y2tndA==" target="_blank" rel="noopener noreferrer" aria-label="MD Asadu Hinu Sabbir Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7.8 3h8.4A4.8 4.8 0 0 1 21 7.8v8.4a4.8 4.8 0 0 1-4.8 4.8H7.8A4.8 4.8 0 0 1 3 16.2V7.8A4.8 4.8 0 0 1 7.8 3zm8.3 1.8H7.9A3.1 3.1 0 0 0 4.8 8v8.1a3.1 3.1 0 0 0 3.1 3.1h8.1a3.1 3.1 0 0 0 3.1-3.1V8a3.1 3.1 0 0 0-3.1-3.1zM12 7.6A4.4 4.4 0 1 1 7.6 12 4.4 4.4 0 0 1 12 7.6zm0 1.8A2.6 2.6 0 1 0 14.6 12 2.6 2.6 0 0 0 12 9.4zm4.9-2.1a1 1 0 1 1-1 1 1 1 0 0 1 1-1z"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+      </div>
+      <p class="footer-note">&copy; 2026 Rag Day Committee &bull; All Rights Reserved</p>
     </footer>
   </main>
 
@@ -210,4 +241,3 @@
   <script src="/js/student.js"></script>
 </body>
 </html>
-
