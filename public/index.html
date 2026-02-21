@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rag Day Registration — Student Portal</title>
+  <meta name="description" content="Register for the college Rag Day event. Fill in your details and payment information to secure your spot." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/student.css" />
+</head>
+<body>
+
+  <!-- ─── Hero Header ──────────────────────────────────────────── -->
+  <header class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="event-badge">🎓 Annual Event 2026</div>
+      <h1 class="hero-title">Rag Day<br/><span>Registration</span></h1>
+      <p class="hero-subtitle">
+        Secure your spot for the most exciting day of the year.<br/>
+        Fill in your details below and complete payment to register.
+      </p>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-icon">🎉</span> Fun & Celebration</div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-icon">🤝</span> Build Memories</div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-icon">🏆</span> Grand Finale</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ─── Main Form ─────────────────────────────────────────────── -->
+  <main class="main-container">
+    <div class="form-card">
+      <div class="form-header">
+        <div class="form-icon">📋</div>
+        <h2>Student Information</h2>
+        <p>Please fill all required fields accurately</p>
+      </div>
+
+      <!-- Success / Error Messages -->
+      <div id="alertBox" class="alert hidden"></div>
+
+      <form id="registrationForm" novalidate>
+
+        <!-- Section: Personal Info -->
+        <div class="section-label">
+          <span class="section-num">01</span> Personal Details
+        </div>
+
+        <div class="form-grid two-col">
+          <div class="form-group">
+            <label for="name">Student Name <span class="req">*</span></label>
+            <div class="input-wrapper">
+              <span class="input-icon">👤</span>
+              <input type="text" id="name" name="name" placeholder="Full Name" required autocomplete="name" />
+            </div>
+            <span class="field-error" id="nameError"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="roll">Roll Number <span class="req">*</span></label>
+            <div class="input-wrapper">
+              <span class="input-icon">🎫</span>
+              <input type="text" id="roll" name="roll" placeholder="e.g. CSE-21-001" required />
+            </div>
+            <span class="field-error" id="rollError"></span>
+          </div>
+        </div>
+
+        <div class="form-grid two-col">
+          <div class="form-group">
+            <label for="section">Section <span class="req">*</span></label>
+            <div class="input-wrapper">
+              <span class="input-icon">🔠</span>
+              <input type="text" id="section" name="section" placeholder="e.g. A / B / C" required />
+            </div>
+            <span class="field-error" id="sectionError"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="department">Department <span class="req">*</span></label>
+            <div class="input-wrapper">
+              <span class="input-icon">🏛️</span>
+              <input type="text" id="department" name="department" placeholder="e.g. CSE, EEE, BBA" required />
+            </div>
+            <span class="field-error" id="departmentError"></span>
+          </div>
+        </div>
+
+        <div class="form-grid two-col">
+          <div class="form-group">
+            <label for="email">Email Address <span class="req">*</span></label>
+            <div class="input-wrapper">
+              <span class="input-icon">✉️</span>
+              <input type="email" id="email" name="email" placeholder="your@email.com" required autocomplete="email" />
+            </div>
+            <span class="field-error" id="emailError"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number <span class="optional">(Optional)</span></label>
+            <div class="input-wrapper">
+              <span class="input-icon">📱</span>
+              <input type="tel" id="phone" name="phone" placeholder="+880 1X XX XX XX XX" autocomplete="tel" />
+            </div>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="tshirt_size">T-shirt Size <span class="req">*</span></label>
+            <div class="input-wrapper select-wrapper smooth-select">
+              <span class="input-icon">👕</span>
+              <select id="tshirt_size" name="tshirt_size" required>
+                <option value="">— Select Size —</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+                <option value="XXL">XXL</option>
+              </select>
+              <span class="select-arrow">▾</span>
+            </div>
+            <span class="field-error" id="tshirt_sizeError"></span>
+          </div>
+        </div>
+
+        <!-- Section: Payment Info -->
+        <div class="section-label">
+          <span class="section-num">02</span> Payment Information
+        </div>
+
+        <div class="payment-methods-display">
+          <div class="pm-badge bkash">
+            <span>bKash</span>
+            <small>01866619714</small>
+          </div>
+          <div class="pm-badge nagad">
+            <span>Nagad</span>
+            <small>01866619714</small>
+          </div>
+        </div>
+        <p class="payment-amount-note">Payable Amount: <strong>650 BDT</strong></p>
+
+        <input type="hidden" id="payment_method" name="payment_method" value="Bkash" />
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="transaction_id">Transaction ID <span class="req">*</span></label>
+            <div class="input-wrapper">
+              <span class="input-icon">🔑</span>
+              <input type="text" id="transaction_id" name="transaction_id" placeholder="e.g. TXN123456789" required />
+            </div>
+            <span class="field-error" id="transaction_idError"></span>
+          </div>
+        </div>
+
+        <div class="form-grid two-col">
+          <div class="form-group">
+            <label for="payment_time">Payment Time <span class="req">*</span></label>
+            <div class="input-wrapper">
+              <span class="input-icon">🕐</span>
+              <input type="datetime-local" id="payment_time" name="payment_time" required readonly />
+            </div>
+            <span class="field-error" id="payment_timeError"></span>
+            <small class="field-note">Auto-generated at submit time.</small>
+          </div>
+
+          <div class="form-group">
+            <label for="screenshot">Payment Screenshot <span class="optional">(Optional)</span></label>
+            <div class="upload-area" id="uploadArea">
+              <input type="file" id="screenshot" name="screenshot" accept="image/*,.pdf" />
+              <div class="upload-content" id="uploadContent">
+                <span class="upload-icon">📷</span>
+                <p>Click or drag & drop</p>
+                <small>JPG, PNG, PDF — max 5MB</small>
+              </div>
+              <div class="upload-preview hidden" id="uploadPreview">
+                <img id="previewImg" src="" alt="Preview" />
+                <button type="button" class="remove-file" id="removeFile">✕</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="submit-wrapper">
+          <button type="submit" class="btn-submit" id="submitBtn">
+            <span class="btn-text">🚀 Submit Registration</span>
+            <span class="btn-spinner hidden" id="spinner">
+              <span class="spinner-ring"></span> Submitting...
+            </span>
+          </button>
+        </div>
+
+      </form>
+    </div>
+
+    <!-- ─── Footer ──────────────────────────────────────────────── -->
+    <footer class="site-footer">
+      <p>© 2026 Rag Day Committee • All Rights Reserved</p>
+      <p class="footer-note">For support, contact the committee office.</p>
+    </footer>
+  </main>
+
+  <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+  <script src="/js/student.js"></script>
+</body>
+</html>
+

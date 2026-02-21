@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard — Rag Day Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="/css/admin.css" />
+</head>
+
+<body class="dashboard-page">
+
+    <!-- ─── Sidebar ──────────────────────────── -->
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <span class="sidebar-icon">🎓</span>
+            <div>
+                <p class="sidebar-title">Rag Day</p>
+                <p class="sidebar-sub">Admin Panel</p>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="#" class="nav-item active" data-filter="all" id="navAll">
+                <span>📋</span> All Registrations
+            </a>
+            <a href="#" class="nav-item" data-filter="pending" id="navPending">
+                <span>⏳</span> Pending
+                <span class="nav-badge pending-badge" id="pendingCount">0</span>
+            </a>
+            <a href="#" class="nav-item" data-filter="approved" id="navApproved">
+                <span>✅</span> Approved
+                <span class="nav-badge approved-badge" id="approvedCount">0</span>
+            </a>
+            <a href="#" class="nav-item" data-filter="rejected" id="navRejected">
+                <span>❌</span> Rejected
+                <span class="nav-badge rejected-badge" id="rejectedCount">0</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="admin-user">
+                <span class="admin-avatar">👤</span>
+                <span id="adminUsername">Admin</span>
+            </div>
+            <button class="btn-logout" id="logoutBtn">🚪 Logout</button>
+        </div>
+    </aside>
+
+    <!-- ─── Main Content ──────────────────────── -->
+    <main class="dash-main">
+
+        <!-- Stats Bar -->
+        <div class="stats-bar">
+            <div class="stat-card total">
+                <span class="stat-num" id="statTotal">0</span>
+                <span class="stat-label">Total</span>
+            </div>
+            <div class="stat-card pending">
+                <span class="stat-num" id="statPending">0</span>
+                <span class="stat-label">Pending</span>
+            </div>
+            <div class="stat-card approved">
+                <span class="stat-num" id="statApproved">0</span>
+                <span class="stat-label">Approved</span>
+            </div>
+            <div class="stat-card rejected">
+                <span class="stat-num" id="statRejected">0</span>
+                <span class="stat-label">Rejected</span>
+            </div>
+        </div>
+
+        <!-- Table Header -->
+        <div class="table-header">
+            <h2 id="tableTitle">All Registrations</h2>
+            <div class="table-actions">
+                <div class="search-box">
+                    <span>🔍</span>
+                    <input type="text" id="searchInput" placeholder="Search name, roll, email…" />
+                </div>
+                <button class="btn-refresh" id="refreshBtn" title="Refresh">🔄</button>
+            </div>
+        </div>
+
+        <!-- Alert -->
+        <div id="dashAlert" class="alert hidden" style="margin:0 28px 16px;"></div>
+
+        <!-- Table -->
+        <div class="table-container">
+            <table class="reg-table" id="regTable">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Roll</th>
+                        <th>Department</th>
+                        <th>Email</th>
+                        <th>Payment</th>
+                        <th>Transaction ID</th>
+                        <th>Status</th>
+                        <th>Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="regTableBody">
+                    <tr id="loadingRow">
+                        <td colspan="10" class="table-loading">
+                            <span class="spinner-ring"></span> Loading registrations…
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Empty State -->
+        <div class="empty-state hidden" id="emptyState">
+            <span class="empty-icon">📭</span>
+            <p>No registrations found</p>
+            <small>Registrations will appear here once students submit their forms.</small>
+        </div>
+
+    </main>
+
+    <!-- ─── Detail Modal ──────────────────────── -->
+    <div class="modal-overlay hidden" id="modalOverlay">
+        <div class="modal" id="detailModal">
+            <div class="modal-header">
+                <h3 id="modalTitle">Registration Details</h3>
+                <button class="modal-close" id="modalClose">✕</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Populated by JS -->
+            </div>
+            <div class="modal-footer" id="modalFooter">
+                <!-- Action buttons populated by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ─── Confirm Modal ─────────────────────── -->
+    <div class="modal-overlay hidden" id="confirmOverlay">
+        <div class="modal confirm-modal" id="confirmModal">
+            <div class="modal-header">
+                <h3 id="confirmTitle">Confirm Action</h3>
+            </div>
+            <div class="modal-body">
+                <p id="confirmMessage"></p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-cancel" id="confirmCancel">Cancel</button>
+                <button class="btn-confirm" id="confirmOk">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/admin.js"></script>
+</body>
+
+</html>
